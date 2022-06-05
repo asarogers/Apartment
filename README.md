@@ -1,3 +1,1 @@
-#Example Site
-this is a sample readme file for our GitHub repo. Learning Markdown
-changed
+This project is design to find all apartments in a given radius
