@@ -1,4 +1,3 @@
-import { getByPlaceholderText } from "@testing-library/react";
 import React, { Component } from "react";
 
 //counter class extends to the component class
