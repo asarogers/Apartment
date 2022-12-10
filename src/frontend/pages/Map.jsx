@@ -1,30 +1,19 @@
 import mapboxgl from "mapbox-gl";
-import { useRef } from "react";
-const Map = () => {
-  //some kind of refernece, no idea what it does yet
-    this.mapContainer = React.createRef();
+import { useEffect, useRef, useState } from "react";
 
-  mapboxgl.accessToken =
-    "pk.eyJ1IjoiYXNhYWNlMDAiLCJhIjoiY2w0MG5wdzN2MXVoNjNibnoxZmdpY2lsdyJ9.pZWS8ItW9mQOVYaPTadyTA";
-  const map = new mapboxgl.Map({
-    container: "map-container", // container ID                              url: https://account.mapbox.com/
-    style: "mapbox://styles/asaace00/cl41mpggv004o14mrudakdwgr", // username: asaace00
-    center: [-74.5, 40], // starting position [lng, lat]        //password: A900@1491s
-    zoom: 9, // starting zoom
-  });
-  const mapboxStyle = "mapbox://styles/asaace00/cl41mpggv004o14mrudakdwgr";
-  return (
-    <>
-      {/* <ReactMapGL
-              mapboxAccessToken=pk.eyJ1IjoiYXNhYWNlMDAiLCJhIjoiY2w0MG5wdzN2MXVoNjNibnoxZmdpY2lsdyJ9.pZWS8ItW9mQOVYaPTadyTA
-        latitude={-74.5}
-        longitude={40}
-        zoom={9}
-        style={{ mapboxStyle }}
-      /> */}
-      <div ref={mapContainerRef} className="mapContainer"></div>
-    </>
-  );
-};
-
-export default Map;
+export default function MapRender() {
+  const ref = useRef(null);
+  const [map, setMap] = useState(null);
+  useEffect(() => {
+    if (ref.current && !map) {
+      const map = new mapboxgl.Map({
+        container: ref.current,
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [0, 0],
+        zoom: 1,
+      });
+      setMap(map);
+    }
+  }, [ref, map]);
+  return <div className="map-container" ref={ref} />;
+}
