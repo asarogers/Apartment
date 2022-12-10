@@ -5,10 +5,11 @@ export default function MapRender() {
   const ref = useRef(null);
   const [map, setMap] = useState(null);
   useEffect(() => {
-    if (ref.current && !map) {
+      if (ref.current && !map) {
+          mapboxgl.accessToken = "pk.eyJ1IjoiYXNhYWNlMDAiLCJhIjoiY2w0MG5wdzN2MXVoNjNibnoxZmdpY2lsdyJ9.pZWS8ItW9mQOVYaPTadyTA";
       const map = new mapboxgl.Map({
         container: ref.current,
-        style: "mapbox://styles/mapbox/streets-v11",
+          style: "mapbox://styles/asaace00/cl41mpggv004o14mrudakdwgr",
         center: [0, 0],
         zoom: 1,
       });
