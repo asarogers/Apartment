@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:hover{
+  color:rgb(0, 45, 112)
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/*---------------------MAP START------------------ */
+.mapboxgl-map{
+  width: 100%;
+  height: 100vh;
+}
+
+/*----------------------MAP END------------------- */
+
+/*---------------------NAVBAR START--------------- */
+.navbar{
+  display: flex !important;
+  background-color: rgb(91, 109, 130);
+  justify-content: space-around !important;
+  align-items: center; /* align vertical */
   color: white;
 }
+/*---------------------NAVBAR END--------------- */
 
-.App-link {
-  color: #61dafb;
-}
+/*If the screen is at least 600px then, */
+@media(min-width: 600px) {
+  /* Run this code*/
+  .mapboxgl-map{
+      width: 100%;
+      height: 100vh;
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
